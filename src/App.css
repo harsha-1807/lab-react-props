@@ -1,0 +1,16 @@
+/* add your styles here */
+h1{
+    text-align: center;
+}
+
+
+.parentDiv{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 40px;
+    padding-left: 8px;
+}
+.images{
+    height: 78vh;
+
+}
