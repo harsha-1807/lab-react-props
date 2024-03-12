@@ -1,51 +1,25 @@
+import "./App.css";
 import React from "react";
-import './App.css';
-import elephant from "./images/elephant.jpeg";
 
-const imageData = ()=>{
-  let data = [
-    {
-      id:1,
-      img:elephant
-    },
-    {
-      id:2,
-      img:elephant
-    },
-    {
-      id:3,
-      img:elephant
-    },
-    {
-      id:4,
-      img:elephant
-    }
-  ]
-  return data;
-}
-
-function App(props) {
-  // code here
-  let image_arr = imageData()
-  console.log(image_arr)
-  return(
+function App({ imageData }) {
+  return (
     <>
-    <h1>Kalvium gallery</h1>
-    
-    <div className='parentDiv'>
-      {
-        image_arr.map(elem =>{
-          return(
-            <img src={elem.img} className='images' alt="elephant" />
-          )
-        })
-      }
-    </div>
-
-
-
+      <h2> Kalvium Gallery </h2>
+      <div className="parentDiv">
+        {imageData.map((e) => {
+          return (
+            <img
+              className="image"
+              src={e.img}
+              id={e.id}
+              key={e.id}
+              alt={`Elephant ${e.id}`}
+            />
+          );
+        })}
+      </div>
     </>
-  )
+  );
 }
 
 export default App;
